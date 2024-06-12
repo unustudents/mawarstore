@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../widgets/form_widget.dart';
+import '../widgets/scaffold_widget.dart';
 import '../widgets/title_widget.dart';
 
 class ConnectionPage extends StatelessWidget {
@@ -13,26 +13,12 @@ class ConnectionPage extends StatelessWidget {
     final passwordC = TextEditingController();
     final ipAddressC = TextEditingController();
 
-    return Scaffold(
-      appBar: AppBar(
-        systemOverlayStyle:
-            const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
-        title: Text("Mawar Store - Connection"),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            color: Colors.white,
-            iconSize: 30,
-            icon: Icon(Icons.menu),
-          ),
-        ],
-      ),
+    return ScaffoldCore(
+      titlePage: "Connection",
       body: Container(
         margin: const EdgeInsets.fromLTRB(15.0, 25.0, 15.0, 0.0),
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-        decoration: BoxDecoration(
-            border: Border.all(color: Theme.of(context).primaryColor),
-            borderRadius: BorderRadius.circular(15)),
+        decoration: BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor), borderRadius: BorderRadius.circular(15)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
@@ -53,16 +39,12 @@ class ConnectionPage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 90, vertical: 10),
-                  shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Theme.of(context).primaryColor),
-                      borderRadius: BorderRadius.circular(20)),
+                  padding: const EdgeInsets.symmetric(horizontal: 90, vertical: 10),
+                  shape: RoundedRectangleBorder(side: BorderSide(color: Theme.of(context).primaryColor), borderRadius: BorderRadius.circular(20)),
                   textStyle: Theme.of(context).textTheme.titleLarge,
                   foregroundColor: Colors.grey.shade600,
                   shadowColor: Colors.transparent,
-                  backgroundColor:
-                      Theme.of(context).primaryColor.withOpacity(0.02),
+                  backgroundColor: Theme.of(context).primaryColor.withOpacity(0.02),
                 ),
                 child: const Text("Submit"),
               ),
