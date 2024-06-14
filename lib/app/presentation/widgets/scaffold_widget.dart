@@ -29,18 +29,22 @@ class ScaffoldCore extends StatelessWidget {
           ),
           Scaffold(
             appBar: AppBar(
-              systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+              systemOverlayStyle: const SystemUiOverlayStyle(
+                  statusBarColor: Colors.transparent),
               title: Text("Mawar Store - $titlePage"),
             ),
             backgroundColor: Colors.transparent,
             body: body,
+            // drawerScrimColor: Colors.transparent,
             endDrawer: Container(
-              margin: EdgeInsets.only(top: kToolbarHeight + MediaQuery.of(context).padding.top),
+              color: Colors.amber,
+              margin: EdgeInsets.only(
+                  top: kToolbarHeight + MediaQuery.of(context).padding.top),
               child: Drawer(
-                shape: ContinuousRectangleBorder(),
+                shape: const ContinuousRectangleBorder(),
                 child: ListView(
-                  padding: EdgeInsets.symmetric(horizontal: 13),
-                  children: [
+                  padding: const EdgeInsets.symmetric(horizontal: 13),
+                  children: const [
                     SizedBox(height: 30),
                     ButtonMain(title: "Data Beras"),
                     SizedBox(height: 10),

@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:mawarstore/app/presentation/pages/datawadah_page.dart';
 import 'app/presentation/pages/connection_page.dart';
 import 'app/theme/theme_light.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       title: 'Mawar Store',
       debugShowCheckedModeBanner: false,
       theme: ThemeLight.light,
-      home: const ConnectionPage(),
+      home: const DataWadahPage(),
     );
   }
 }

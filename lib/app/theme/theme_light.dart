@@ -9,9 +9,11 @@ class ThemeLight {
       foregroundColor: Colors.white,
       // surfaceTintColor: Colors.white,
       centerTitle: false,
-      titleTextStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 20.0, color: Colors.white),
+      // titleTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: Colors.white),
+      titleTextStyle: const TextStyle(
+          fontWeight: FontWeight.w600, fontSize: 20.0, color: Colors.white),
     ),
-    drawerTheme: DrawerThemeData(backgroundColor: Colors.white),
+    drawerTheme: const DrawerThemeData(backgroundColor: Colors.white),
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: Colors.white,
   );
