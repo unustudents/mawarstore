@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/button_widget.dart';
+import '../widgets/card_widget.dart';
 import '../widgets/form_widget.dart';
 import '../widgets/scaffold_widget.dart';
 import '../widgets/title_widget.dart';
@@ -16,14 +17,7 @@ class ConnectionPage extends StatelessWidget {
 
     return ScaffoldCore(
       titlePage: "Connection",
-      body: Container(
-        margin: const EdgeInsets.fromLTRB(15.0, 25.0, 15.0, 0.0),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-        decoration: BoxDecoration(
-          border: Border.all(color: Theme.of(context).primaryColor),
-          borderRadius: BorderRadius.circular(15),
-          color: Colors.white.withOpacity(0.8),
-        ),
+      body: CardContainer(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
