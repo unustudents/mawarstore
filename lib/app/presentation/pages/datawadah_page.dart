@@ -18,13 +18,15 @@ class DataWadahPage extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 25),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 13, horizontal: 25),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
                 textStyle: const TextStyle(fontSize: 20.0),
                 foregroundColor: Colors.white,
-                backgroundColor: Theme.of(context).primaryColor.withOpacity(0.8),
+                backgroundColor:
+                    Theme.of(context).primaryColor.withOpacity(0.8),
               ),
               child: const Text("Tambah"),
             ),
@@ -35,43 +37,55 @@ class DataWadahPage extends StatelessWidget {
               child: ListView(
                 shrinkWrap: true,
                 children: [
-                  InkWell(
-                    child: Material(
-                      color: Colors.transparent,
-                      child: ListTile(
-                        dense: true,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                          side: BorderSide(color: Theme.of(context).primaryColor),
-                        ),
-                        leading: Text(
-                          "1",
-                          style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Colors.black54, fontWeight: FontWeight.w600),
-                        ),
-                        onTap: () {},
-                        title: Text(
-                          "Beras Ketan",
-                          style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Colors.black54),
-                        ),
-                      ),
-                    ),
-                  ),
+                  ListButton(no: '1', title: 'Beras Ketan'),
+                  SizedBox(height: 10),
+                  ListButton(no: '2', title: 'Beras Mawar'),
+                  SizedBox(height: 10),
+                  ListButton(no: '3', title: 'Beras IR'),
+                  // SizedBox(height: 10),
                 ],
               ),
             ),
           ),
-          // CardContainer(
-          //   child: Expanded(
-          //     child: ListView(
-          //       children: [
-          //         ListTile(
-          //           title: Text("Beras Ketan"),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
         ],
+      ),
+    );
+  }
+}
+
+class ListButton extends StatelessWidget {
+  const ListButton({super.key, required this.no, required this.title});
+
+  final String no;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      child: Material(
+        color: Colors.transparent,
+        child: ListTile(
+          dense: true,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+            side: BorderSide(color: Theme.of(context).primaryColor),
+          ),
+          leading: Text(
+            no,
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(color: Colors.black54, fontWeight: FontWeight.w600),
+          ),
+          onTap: () {},
+          title: Text(
+            title,
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(color: Colors.black54),
+          ),
+        ),
       ),
     );
   }
