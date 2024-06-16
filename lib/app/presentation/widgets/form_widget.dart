@@ -10,6 +10,7 @@ class FormReguler extends StatelessWidget {
     return TextField(
       controller: controller,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(12),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(color: Theme.of(context).primaryColor),
@@ -23,6 +24,7 @@ class FormReguler extends StatelessWidget {
         fillColor: Theme.of(context).primaryColor.withOpacity(0.02),
         filled: true,
       ),
+      style: Theme.of(context).textTheme.titleLarge,
     );
   }
 }

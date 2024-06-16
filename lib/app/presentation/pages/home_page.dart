@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
 
     return ScaffoldCore(
       titlePage: 'Beras Berkualitas',
-      body: Column(
+      body: ListView(
         children: [
           // PILIH JENIS BERAS
           CardContainer(
@@ -83,13 +83,18 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 5),
                 FormReguler(controller: cJumlahKg),
                 const SizedBox(height: 5),
-                const TitleWidget(teks: 'Jumlah Kg'),
+                const TitleWidget(teks: 'Total Harga'),
                 Row(
                   children: [
                     const TitleWidget(teks: 'RP'),
                     const SizedBox(width: 10),
                     Flexible(child: FormReguler(controller: cTotalHarga)),
                   ],
+                ),
+                const SizedBox(height: 35),
+                const ButtonMain(
+                  title: 'Proses',
+                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 7),
                 ),
               ],
             ),
