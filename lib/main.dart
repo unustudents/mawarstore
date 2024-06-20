@@ -1,9 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mawarstore/app/presentation/pages/datawadah_page.dart';
-import 'package:mawarstore/app/presentation/pages/home_page.dart';
-import 'app/presentation/pages/connection_page.dart';
+
+import 'app/routes/app_pages.dart';
 import 'app/theme/theme_light.dart';
 
 void main() {
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       // ignore: deprecated_member_use
       useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
@@ -29,7 +28,8 @@ class MyApp extends StatelessWidget {
       title: 'Mawar Store',
       debugShowCheckedModeBanner: false,
       theme: ThemeLight.light,
-      home: const HomePage(),
+      routerConfig: AppPages.routes,
+      // home: const HomePage(),
     );
   }
 }

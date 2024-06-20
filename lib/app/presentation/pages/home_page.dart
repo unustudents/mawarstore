@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../widgets/button_widget.dart';
 import '../widgets/card_widget.dart';
@@ -11,6 +12,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // VARIABLE
     final cJenisBeras = TextEditingController();
     final cHargaPerKg = TextEditingController();
     final cTransaksiKg = TextEditingController();
@@ -107,8 +109,9 @@ class HomePage extends StatelessWidget {
                   title: 'Proses',
                   padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 7),
                   onPressed: () {
-                    print(cHargaPerKg.value.text);
-                    print(double.parse(cJumlahKg.text) * double.parse(cHargaPerKg.text));
+                    // print(cHargaPerKg.value.text);
+                    // print(double.parse(cJumlahKg.text) * double.parse(cHargaPerKg.text));
+                    GoRouter.of(context).go('/connection');
                   },
                 ),
               ],

@@ -6,8 +6,6 @@ part 'beras_state.dart';
 
 class BerasBloc extends Bloc<BerasEvent, BerasState> {
   BerasBloc() : super(BerasInitial()) {
-    on<BerasEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<BerasEvent>((event, emit) {});
   }
 }
