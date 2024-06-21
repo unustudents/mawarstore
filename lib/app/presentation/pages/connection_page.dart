@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../routes/app_pages.dart';
 import '../widgets/button_widget.dart';
 import '../widgets/card_widget.dart';
 import '../widgets/form_widget.dart';
@@ -39,6 +40,7 @@ class ConnectionPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 90, vertical: 10),
                 title: 'Submit',
                 foregroundColor: Colors.grey.shade600,
+                onPressed: () => context.goNamed(Routes.home),
               ),
             )
           ],

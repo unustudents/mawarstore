@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:mawarstore/app/presentation/widgets/button_widget.dart';
-import 'package:mawarstore/app/presentation/widgets/card_widget.dart';
-import 'package:mawarstore/app/presentation/widgets/form_widget.dart';
-import 'package:mawarstore/app/presentation/widgets/title_widget.dart';
+import 'package:go_router/go_router.dart';
 
+import '../widgets/button_widget.dart';
+import '../widgets/card_widget.dart';
+import '../widgets/form_widget.dart';
 import '../widgets/scaffold_widget.dart';
+import '../widgets/title_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // VARIABLE
     final cJenisBeras = TextEditingController();
     final cHargaPerKg = TextEditingController();
     final cTransaksiKg = TextEditingController();
@@ -27,10 +29,13 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // PILIH JENIS BARANG
                 const TitleWidget(teks: 'Pilih Jenis Beras'),
                 const SizedBox(height: 5),
                 FormReguler(controller: cJenisBeras),
                 const SizedBox(height: 5),
+
+                // HARGA / KG
                 const TitleWidget(teks: 'Harga / Kg'),
                 const SizedBox(height: 5),
                 Row(
@@ -49,6 +54,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // TRANSAKSI BERDASARKAN KG
                 const TitleWidget(teks: 'Transaksi Berdasarkan Kg'),
                 const SizedBox(height: 5),
                 Row(
@@ -59,6 +65,8 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 5),
+
+                // TRANSAKSI BERDASARKAN HARGA
                 const TitleWidget(teks: 'Transaksi Berdasarkan Harga'),
                 const SizedBox(height: 5),
                 Row(
@@ -79,10 +87,13 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // JUMLAH KG
                 const TitleWidget(teks: 'Jumlah Kg'),
                 const SizedBox(height: 5),
                 FormReguler(controller: cJumlahKg),
                 const SizedBox(height: 5),
+
+                // TOTAL HARGA
                 const TitleWidget(teks: 'Total Harga'),
                 Row(
                   children: [
@@ -92,9 +103,16 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 35),
-                const ButtonMain(
+
+                // TOMBOL PROSES
+                ButtonMain(
                   title: 'Proses',
-                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 7),
+                  padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 7),
+                  onPressed: () {
+                    // print(cHargaPerKg.value.text);
+                    // print(double.parse(cJumlahKg.text) * double.parse(cHargaPerKg.text));
+                    GoRouter.of(context).go('/connection');
+                  },
                 ),
               ],
             ),

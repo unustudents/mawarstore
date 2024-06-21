@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class FormReguler extends StatelessWidget {
   const FormReguler({super.key, required this.controller});
@@ -17,13 +18,20 @@ class FormReguler extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide:
-              BorderSide(color: Theme.of(context).primaryColor, width: 1.8),
+          borderSide: BorderSide(color: Theme.of(context).primaryColor, width: 1.8),
         ),
         isDense: true,
         fillColor: Theme.of(context).primaryColor.withOpacity(0.02),
         filled: true,
       ),
+      inputFormatters: [
+        // FilteringTextInputFormatter.digitsOnly,
+        // FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
+        FilteringTextInputFormatter.allow(RegExp(r'^\d?\.?\d{0,2}')),
+
+        // WhitelistingTextInputFormatter(RegExp(r'[0-9,.]')),
+      ],
+      keyboardType: TextInputType.number,
       style: Theme.of(context).textTheme.titleLarge,
     );
   }

@@ -17,14 +17,17 @@ class AppPages {
         path: '/',
         name: Routes.home,
         builder: (context, state) => const HomePage(),
-        routes: [
-          GoRoute(
-            path: 'wadah',
-            name: Routes.wadah,
-            builder: (context, state) => const DataWadahPage(),
-          ),
-        ],
       ),
+      GoRoute(
+        path: '/wadah',
+        name: Routes.wadah,
+        builder: (context, state) => const DataWadahPage(),
+      ),
+      // GoRoute(
+      //   path: '/beras',
+      //   name: Routes.wadah,
+      //   builder: (context, state) => const DataWadahPage(),
+      // ),
       GoRoute(
         path: '/connection',
         name: Routes.connection,
