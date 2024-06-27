@@ -7,4 +7,5 @@ abstract class Routes {
   // static const beras = "beras";
   static const connection = "connection";
   static const splash = "splash";
+  static const history = "history";
 }

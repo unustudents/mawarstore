@@ -30,15 +30,19 @@ class ScaffoldCore extends StatelessWidget {
           ),
           Scaffold(
             appBar: AppBar(
-              systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
-              title: GestureDetector(onTap: () => context.goNamed(Routes.home), child: Text("Mawar Store - $titlePage")),
+              systemOverlayStyle: const SystemUiOverlayStyle(
+                  statusBarColor: Colors.transparent),
+              title: GestureDetector(
+                  onTap: () => context.goNamed(Routes.home),
+                  child: Text("Mawar Store - $titlePage")),
             ),
             backgroundColor: Colors.transparent,
             body: body,
             // drawerScrimColor: Colors.transparent,
             endDrawer: Container(
               color: Colors.amber,
-              margin: EdgeInsets.only(top: kToolbarHeight + MediaQuery.of(context).padding.top),
+              margin: EdgeInsets.only(
+                  top: kToolbarHeight + MediaQuery.of(context).padding.top),
               child: Drawer(
                 shape: const ContinuousRectangleBorder(),
                 child: ListView(
@@ -58,13 +62,16 @@ class ScaffoldCore extends StatelessWidget {
                     const SizedBox(height: 10),
 
                     // HISTORY
-                    const ButtonMain(title: "History"),
+                    ButtonMain(
+                      title: "History",
+                      onPressed: () => context.goNamed(Routes.history),
+                    ),
                     const SizedBox(height: 10),
 
                     // CONNECTION
                     ButtonMain(
                       title: "Connection",
-                      onPressed: () => GoRouter.of(context).go('/connection'),
+                      onPressed: () => context.goNamed(Routes.connection),
                     ),
                   ],
                 ),
