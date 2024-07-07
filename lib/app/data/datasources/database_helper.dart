@@ -6,6 +6,10 @@ import 'tables.dart';
 
 class DatabaseHelper {
   final dbName = 'db_mawarstore.db';
+  final tables = [
+    TbBeras.createTABLE,
+    TbTransaksi.createTABLE,
+  ];
 
   Future<Database> initDatabase() async {
     final dbPath = await getApplicationDocumentsDirectory();
@@ -14,8 +18,16 @@ class DatabaseHelper {
       path,
       version: 1,
       onCreate: (db, version) async {
-        await db.execute(TbBeras.titleTable);
-        await db.execute(TbTransaksi.titleTable);
+        for (var element in tables) {
+          try {
+            await db.execute(element);
+            print("SQL : Success Created !");
+          } catch (e) {
+            print("SQL ${e.toString()}");
+          }
+        }
+        // await db.execute(TbBeras.nameTABLE);
+        // await db.execute(TbTransaksi.nameTABLE);
       },
     );
   }

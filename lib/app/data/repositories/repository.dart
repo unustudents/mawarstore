@@ -1,6 +1,6 @@
-import 'package:mawarstore/app/data/datasources/database_helper.dart';
-import 'package:mawarstore/app/data/datasources/tables.dart';
-import 'package:mawarstore/app/data/models/tb_beras_model.dart';
+import '../datasources/database_helper.dart';
+import '../datasources/tables.dart';
+import '../models/tb_beras_model.dart';
 
 class Repository {
   final DatabaseHelper dbHelper = DatabaseHelper();
@@ -8,32 +8,32 @@ class Repository {
   // Get Beras
   Future<List<TbBerasModel>> getBeras() async {
     final db = await dbHelper.initDatabase();
-    final List<Map<String, Object?>> query = await db.query(TbBeras.titleTable);
+    final List<Map<String, Object?>> query = await db.query(TbBeras.nameTABLE);
     return query.map((e) => TbBerasModel.fromJson(e)).toList();
   }
 
   // Add Beras
   Future<int> addBeras(TbBerasModel data) async {
     final db = await dbHelper.initDatabase();
-    return db.insert(TbBeras.titleTable, data.toJson());
+    return db.insert(TbBeras.nameTABLE, data.toJson());
   }
 
   // Update Beras
   Future<int> updateBeras(TbBerasModel data) async {
     final db = await dbHelper.initDatabase();
-    return db.update(TbBeras.titleTable, data.toJson(), where: "id = ?", whereArgs: [data.id]);
+    return db.update(TbBeras.nameTABLE, data.toJson(), where: "id = ?", whereArgs: [data.id]);
   }
 
   // Delete Beras
   deleteBeras(int id) async {
     final db = await dbHelper.initDatabase();
-    return db.delete(TbBeras.titleTable, where: "id = ?", whereArgs: [id]);
+    return db.delete(TbBeras.nameTABLE, where: "id = ?", whereArgs: [id]);
   }
 
   // Get Beras By ID
   Future<TbBerasModel> getBerasById(int id) async {
     final db = await dbHelper.initDatabase();
-    final query = await db.query(TbBeras.titleTable, where: "id = ?", whereArgs: [id]);
+    final query = await db.query(TbBeras.nameTABLE, where: "id = ?", whereArgs: [id]);
     if (query.isNotEmpty) {
       return TbBerasModel.fromJson(query.first);
     } else {
