@@ -12,8 +12,8 @@ class ConnectionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ssidC = TextEditingController();
-    final passwordC = TextEditingController();
+    // final ssidC = TextEditingController();
+    // final passwordC = TextEditingController();
     final ipAddressC = TextEditingController();
 
     return ScaffoldCore(
@@ -23,14 +23,14 @@ class ConnectionPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            const TitleWidget(teks: "SSID"),
-            const SizedBox(height: 10),
-            FormReguler(controller: ssidC),
-            const SizedBox(height: 10),
-            const TitleWidget(teks: "Password"),
-            const SizedBox(height: 10),
-            FormReguler(controller: passwordC),
-            const SizedBox(height: 10),
+            // const TitleWidget(teks: "SSID"),
+            // const SizedBox(height: 10),
+            // FormReguler(controller: ssidC),
+            // const SizedBox(height: 10),
+            // const TitleWidget(teks: "Password"),
+            // const SizedBox(height: 10),
+            // FormReguler(controller: passwordC),
+            // const SizedBox(height: 10),
             const TitleWidget(teks: "IP Address"),
             const SizedBox(height: 10),
             FormReguler(controller: ipAddressC),

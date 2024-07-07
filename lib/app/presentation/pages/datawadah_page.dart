@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/card_widget.dart';
-import '../widgets/scaffold_widget.dart';
+import '../widgets/widget.dart';
 
 class DataWadahPage extends StatelessWidget {
   const DataWadahPage({super.key});

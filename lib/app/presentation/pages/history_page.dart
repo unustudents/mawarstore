@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mawarstore/app/presentation/widgets/scaffold_widget.dart';
+
+import '../widgets/scaffold_widget.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({super.key});
