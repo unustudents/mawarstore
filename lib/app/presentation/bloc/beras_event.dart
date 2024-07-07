@@ -6,3 +6,15 @@ abstract class BerasEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+// Get Event
+class GetAllBerasEvent extends BerasEvent {}
+
+// Add Beras Event
+class AddBerasEvent extends BerasEvent {}
+
+// Update Beras Event
+class UpdateBerasEvent extends BerasEvent {}
+
+// Delete Beras Event
+class DeleteBerasEvent extends BerasEvent {}
