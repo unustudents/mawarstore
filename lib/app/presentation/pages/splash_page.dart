@@ -16,6 +16,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     // Future.delayed(const Duration(seconds: 3), () => context.goNamed(Routes.home));
+    Future.delayed(const Duration(seconds: 3)).then((value) => context.goNamed(Routes.home));
     super.initState();
   }
 
@@ -28,13 +29,11 @@ class _SplashPageState extends State<SplashPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(AppImages.beras,
-                width: MediaQuery.of(context).size.width / 2),
+            Image.asset(AppImages.beras, width: MediaQuery.of(context).size.width / 2),
             const SizedBox(height: 20),
             Text(
               "Mawar Store - Beras Berkualitas",
-              style: TextStyle(
-                  color: Theme.of(context).primaryColor, fontSize: 20),
+              style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 20),
             ),
           ],
         ),
